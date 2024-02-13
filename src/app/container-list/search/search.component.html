@@ -1,0 +1,7 @@
+<div class="emart-search-product">
+    <input type="text" class="emart-search-product-input" #searchInput >
+    <button  class="btn btn-search" (click)="updateSearchText()" >Search</button>
+</div>
+<div class="emart-search-result-for">
+    <p *ngIf="searchText !=''"><strong>Search result for:</strong>{{searchText}}</p>
+</div>

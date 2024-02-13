@@ -1,0 +1,20 @@
+<div class="emart-product-item" >
+    <div class="emart-wishlist-sale-container">
+        <div class="emart-add-to-wishlist">
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            
+        </div>
+        <div class="emart-on-sale-tag" *ngIf="product.discountPrice">{{(product.discountPrice / product.price * 100).toFixed(0)}}% OFF</div>
+    </div>
+    <div class="emart-product-image">
+        <img [src]="product.imageURL" height="250px" width="265px" class="emart-product-image">
+    </div>
+    <div class="emart-add-to-price">
+        ${{product.price}}
+    </div> 
+    <div class="emart-product-name">{{ product.name }} </div>
+    <div class="emart-product-category">{{ product.gender }} . {{ product.category }} . {{ product.brand }} </div>
+    <div class="emart-product-available-colors">{{product.color.length}} Colors . Best Seller</div>
+<div class="emart-product-in-stock" [ngStyle]="{fontWeight: 'bold', color: product.is_in_inventory ? 'Green' : 'Red'}">
+        {{ product.is_in_inventory ? 'Available in stock': 'Not available in stock'}}</div>
+</div>

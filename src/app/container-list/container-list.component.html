@@ -1,0 +1,19 @@
+<div class="emart-container-list">
+    <!-- <img [src]=" product.pImage" class="img">
+    <p>Name: {{product.name}}</p>
+    <p>Price:  {{'$' + product.price}}</p>
+    <p>Color: Matte Black</p>
+    <p>Discounted Price: {{getDiscount().toFixed(2)}}</p>
+    <p>{{product.inStock > 0 ? 'Only' + product.inStock + 'items left': 'Not is stock'}}</p>
+    <button (click)="decrementCartValue()">-</button>
+    <span>{{addToCart}}</span>
+    <button (click)="incrementCartValue()">+</button> -->
+    <!-- <input (input)="onNameChange($event)"> <br> -->
+    <!-- <p>name: {{name}}</p> -->
+    <app-search (searchTextChanged)="setSearchText($event)" ></app-search>
+    <productlist [searchText]="searchText" #productListComponent ></productlist>
+    <product-details *ngIf="productListComponent.selectedProduct" ></product-details>
+    <!-- <div *ngFor="let item of listOfString">
+    <p>Current element of array is : {{item}}</p>
+    </div> -->
+    </div>
