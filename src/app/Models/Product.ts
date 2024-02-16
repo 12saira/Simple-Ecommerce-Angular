@@ -6,7 +6,7 @@ export class Product{
   gender: string;
   category: string;
   size: number[];
-  color: string;
+  color: string[];
   price: number;
   discountPrice?: number;
   is_in_inventory: boolean;
