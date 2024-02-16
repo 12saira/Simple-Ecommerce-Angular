@@ -4,7 +4,7 @@
             <i class="fa fa-heart-o" aria-hidden="true"></i>
             
         </div>
-        <div class="emart-on-sale-tag" *ngIf="product.discountPrice">{{(product.discountPrice / product.price * 100).toFixed(0)}}% OFF</div>
+        <div class="emart-on-sale-tag" *ngIf="product.discountPrice">{{(((product.price-product.discountPrice) / product.price * 100)).toFixed(0)}}% OFF</div>
     </div>
     <div class="emart-product-image">
         <img [src]="product.imageURL" height="250px" width="265px" class="emart-product-image">

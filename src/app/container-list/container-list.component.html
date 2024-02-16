@@ -12,7 +12,7 @@
     <!-- <p>name: {{name}}</p> -->
     <app-search (searchTextChanged)="setSearchText($event)" ></app-search>
     <productlist [searchText]="searchText" #productListComponent ></productlist>
-    <product-details *ngIf="productListComponent.selectedProduct" ></product-details>
+    <product-details *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent" ></product-details>
     <!-- <div *ngFor="let item of listOfString">
     <p>Current element of array is : {{item}}</p>
     </div> -->

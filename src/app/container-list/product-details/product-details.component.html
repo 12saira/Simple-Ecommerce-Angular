@@ -3,47 +3,51 @@
         <i class="fa fa-times" aria-hidden="true"></i>
     </div>
     <div class="emart-product-detail-image">
-        <img src="https://images.vans.com/is/image/Vans/MV122M-HERO?$583x583$" class="emart-product-detail-image">
+        <img [src]="product.imageURL" class="emart-product-detail-image">
     </div>
     
     <div class="emart-product-detail">
         <div class="emart-product-detail-name">
-            <h2>Michael Feburary SK8-Hi</h2>
+            <h2> {{product.name}}  </h2>
         </div>
         <div class="emart-product-detail-gbc">
-            <span>MEN</span>
-            <span>NIKE</span>
-            <span>SPORTS</span>
+            <span> {{product.gender}} </span>
+            <span> {{product.brand}} </span>
+            <span> {{product.category}} </span>
         </div>
         <div class="emart-product-detail-price">
             <p>
                 <b>Price Each Pair:</b>
-                <span style="background-color: red; color:white"><s>$699</s></span>
-                <span style="background-color: green; color:white">$599</span> (Inclusive of all taxes)
+                 <span style="background-color: red; color:white" *ngIf="product.discountPrice===0 " > 
+                    {{product.price}}  </span> 
+                   <span  style="background-color: red; color:white" *ngIf="product.discountPrice" ><s>{{product.price}} </s></span> 
+                <span style="background-color: green; color:white" *ngIf="product.discountPrice" > {{product.discountPrice}} </span> (Inclusive of all taxes)
             </p>
         </div>
         <div class="emart-product-detail-size">
-            <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+            <div style="padding: 5px 0px;border-bottom: #ccc 2px solid; width: 100%">
                 <h4>Available Size</h4>
             </div>
-            <diV style="margin-top: 20px">
-                <span class="emart-product-detail-available-size">6</span>
-                <span class="emart-product-detail-available-size">7</span>
-                <span class="emart-product-detail-available-size">8</span>
-                <span class="emart-product-detail-available-size">9</span>
+            <diV style="margin-top: 20px" class="emart-product-detail-available-sizes-container"  *ngFor="let size of product.size" >
+                <!-- <span class="emart-product-detail-available-size">   </span> -->
+                <span class="emart-product-detail-available-size" > {{size}} </span>
+                <!-- <span class="emart-product-detail-available-size">{{s}}</span>
+                <span class="emart-product-detail-available-size">{{s}}</span> -->
+                
             </diV>                
         </div>
 
         <div class="emart-product-detail-color">
             <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
-                <h4>Available Color</h4>
+                <h4> Available Colors </h4>
             </div>
-            <div style="margin-top: 20px;">
-                <span class="emart-product-detail-available-color" style="background-color: red;"></span>
+            <div style="margin-top: 20px;" >
+                <!-- <span class="emart-product-detail-available-color" style="background-color: red;"></span>
                 <span class="emart-product-detail-available-color" style="background-color: green;"></span>
                 <span class="emart-product-detail-available-color" style="background-color: black;"></span>
-                <span class="emart-product-detail-available-color" style="background-color: blue;"></span>
-            </div>                
+                <span class="emart-product-detail-available-color" style="background-color: blue;"></span> -->
+                <span *ngFor="let color of product.color" class="emart-product-detail-available-color" [style.background-color]="color"></span>
+            </div>                 
         </div>
 
         <div class="emart-product-detail-desc">
@@ -51,12 +55,15 @@
                 <h4>Product Description</h4>
             </div>
             <div style="margin-top: 20px">
-                <p>DESCRIPTION</p>
+                <p> {{product.description}} </p>
             </div>                
         </div>
     </div>
     <div class="emart-product-detail-addtoCart">
-        <button class="btn-add-to-cart">ADD TO CART</button>
+        <button class="btn-add-to-cart" *ngIf="product.is_in_inventory ;else notifyMe ">ADD TO CART</button>
+        <ng-template #notifyMe>
+            <button class="btn-add-to-cart" > NOTIFY ME </button>
+        </ng-template>
     </div>
 </div>
 <div class="overlay"></div>
