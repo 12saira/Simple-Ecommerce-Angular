@@ -17,3 +17,10 @@ a{
     text-decoration: none;
     padding: 0 10px;
     color: #36454F;}
+
+.active{
+    font-size: 18px;
+    font-weight: bold;
+}    
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
