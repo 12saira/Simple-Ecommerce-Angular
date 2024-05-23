@@ -8,8 +8,11 @@
 <div class="emart-product-container" >
     
     <!-- *ngIf="selectedFilterRadioButton==='all'  || prod.is_in_inventory.toString()===selectedFilterRadioButton " -->
-    <div *ngFor="let prod of products" (click)="selectedProduct = prod" > 
-        <app-product  [product]="prod"  *ngIf="searchText===''  || prod.brand.toLowerCase().includes(searchText) " ></app-product>
-    </div>
+    <ng-container *ngFor="let prod of products"  > 
+        <app-product  [product]="prod" 
+         *ngIf="searchText===''  || prod.brand.toLowerCase().includes(searchText)" 
+         (click)="selectedProduct = prod"
+         ></app-product>
+    </ng-container>
     
 </div>

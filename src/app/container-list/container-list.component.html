@@ -13,6 +13,23 @@
     <app-search (searchTextChanged)="setSearchText($event)" ></app-search>
     <productlist [searchText]="searchText" #productListComponent ></productlist>
     <product-details *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent" ></product-details>
+    <div class="emart-featured-products">
+        <div class="emart-featured-product-heading">
+            <h1>Latest Arrival in Popular Brands</h1>
+        </div>
+        <featured-brands>
+            <h3 class="title">New Arrivals in Nike</h3>
+            <button class="call-to-action">Show New Arrivals in Nike</button>
+        </featured-brands>
+        <featured-brands>
+            <h3 class="title">New Arrivals in Adidas</h3>
+            <button class="call-to-action">Show New Arrivals in Adidas</button>
+        </featured-brands>
+        <featured-brands>
+            <h3 class="title">New Arrivals in Puma</h3>
+            <button class="call-to-action">Show New Arrivals in Puma </button>
+        </featured-brands>
+    </div>
     <!-- <div *ngFor="let item of listOfString">
     <p>Current element of array is : {{item}}</p>
     </div> -->
