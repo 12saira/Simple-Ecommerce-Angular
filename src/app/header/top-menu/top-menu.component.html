@@ -1,6 +1,6 @@
 <div class="Emart--top--bar">
     <a href="#">Help</a>
     <a href="#">Exchange & Returns</a>
-    <a href="#">Order Tracker</a>
-    <a href="#">Sign Up / Login</a>
+    <a routerLink="login" routerLinkActive="active"  >Login</a>
+    <a routerLink="login" [queryParams]="{logout : true}" >Logout</a>
 </div>

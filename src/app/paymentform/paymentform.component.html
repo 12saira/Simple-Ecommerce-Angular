@@ -1,0 +1,42 @@
+<div class="dialog-content">
+   
+   
+   
+    <button mat-icon-button class="close-button" (click)="closeDialog()" style="margin-left: 550px;">
+      
+      <mat-icon aria-label="Close dialog" >close</mat-icon>
+    </button>
+  
+    
+    <div id="products-component">
+      <h1 style="text-align: center;justify-content: center;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Cart</h1>    
+      
+      <div class="product-container">
+          <div class="product-image-container"  >
+              <img src="{{data.imageURL }}" alt="{{data.name }}" >
+          </div>
+          <h3>{{ data.name }}</h3>
+          <p>Rs. {{data.price}}</p>
+          <span>
+            <form #myForm action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST" (submit)="submitForm()">
+              <input type="hidden" name="amount" [value]="total_amount" required>
+              <input type="hidden" name="tax_amount" value="0" hidden>
+              <input type="hidden" name="total_amount" [value]="total_amount" hidden>
+              <input type="hidden" name="transaction_uuid" [value]="transactionId" hidden>
+              <input type="hidden" name="product_code" value="EPAYTEST" hidden>
+              <input type="hidden" name="product_service_charge" value="0" hidden>
+              <input type="hidden" name="product_delivery_charge" value="0" hidden>
+              <input type="hidden" name="success_url" value="https://esewa.com.np" hidden>
+              <input type="hidden" name="failure_url" value="http://localhost:56460/**" hidden>
+              <input type="hidden" name="signed_field_names" value="total_amount,transaction_uuid,product_code" hidden>
+              <input type="hidden" name="signature" [value]="hashInBase64" hidden>
+              <button type="submit" class="esewa-button">Pay via eSewa</button>
+            </form>
+          </span>
+          
+      </div>
+  </div>
+  
+  
+  
+  </div>

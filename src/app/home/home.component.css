@@ -1,0 +1,126 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    margin-bottom: 40px;
+   
+    border-radius: 10px;
+  }
+  
+  .welcome-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  .welcome-image2 img{
+    border-radius: 10px;
+  }
+  .welcome-image {
+    flex: 1;
+  }
+  
+  .welcome-image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .welcome-description {
+    flex: 1;
+    padding: 50px 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 50px;
+    color: rgb(80, 80, 80);
+  }
+  
+  .welcome-description h1 {
+    font-size:50px;
+    margin-bottom: 10px;
+    
+  }
+  
+  .welcome-description p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    
+  }
+  
+  .go-to-products-btn {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #292a2b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .go-to-products-btn:hover {
+    background-color: #000000;
+  }
+  
+  .main {
+    text-align: center;
+  }
+  
+  .featured-products {
+    margin-bottom: 40px;
+  }
+  
+  .featured-products h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .product-card {
+    display: inline-block;
+    width: 300px;
+    margin: 0 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .product-card h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  
+  .product-card p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  .product-card button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color:#292a2b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-card button:hover {
+    background-color: #000000;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+  
