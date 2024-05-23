@@ -7,7 +7,7 @@
     </div>
     
     <div class="emart-product-detail">
-        <div class="emart-product-detail-name">
+        <div class="emart-product-detail-name">s
             <h2> {{product.name}}  </h2>
         </div>
         <div class="emart-product-detail-gbc">
@@ -19,7 +19,7 @@
             <p>
                 <b>Price Each Pair:</b>
                  <span style="background-color: red; color:white" *ngIf="product.discountPrice===0 " > 
-                    {{product.price}}  </span> 
+                   Rs. {{product.price}}  </span> 
                    <span  style="background-color: red; color:white" *ngIf="product.discountPrice" ><s>{{product.price}} </s></span> 
                 <span style="background-color: green; color:white" *ngIf="product.discountPrice" > {{product.discountPrice}} </span> (Inclusive of all taxes)
             </p>
@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="emart-product-detail-addtoCart">
-        <button class="btn-add-to-cart" *ngIf="product.is_in_inventory ;else notifyMe ">ADD TO CART</button>
+        <button class="btn-add-to-cart" *ngIf="product.is_in_inventory ;else notifyMe " (click)="buyProduct()">BUY NOW</button>
         <ng-template #notifyMe>
             <button class="btn-add-to-cart" > NOTIFY ME </button>
         </ng-template>

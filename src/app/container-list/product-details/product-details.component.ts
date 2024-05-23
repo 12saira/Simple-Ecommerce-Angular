@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../Models/Product';
 import { ProductlistComponent } from '../productlist/productlist.component';
+import { MatDialog } from '@angular/material/dialog';
+import { PaymentformComponent } from '../../paymentform/paymentform.component';
 
 @Component({
   selector: 'product-details',
@@ -15,6 +17,19 @@ export class ProductDetailsComponent {
 
  ngOnInit(){
   this.product=this.productListComp.selectedProduct;
+ }
+
+ /**
+  *
+  */
+ constructor(private dialog: MatDialog) {
+  
+ }
+
+ buyProduct() {
+  const dialog = this.dialog.open(PaymentformComponent, {
+    data: this.product
+  });
  }
 
 
